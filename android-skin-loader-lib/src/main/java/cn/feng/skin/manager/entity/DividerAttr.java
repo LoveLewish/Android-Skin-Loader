@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.ListView;
 import cn.feng.skin.manager.loader.SkinManager;
 
+/**
+ * ListView Attr
+ */
 public class DividerAttr extends SkinAttr {
 
 	public int dividerHeight = 1;

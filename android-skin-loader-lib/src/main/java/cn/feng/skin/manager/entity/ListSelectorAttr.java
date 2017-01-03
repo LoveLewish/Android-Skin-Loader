@@ -4,6 +4,9 @@ import android.view.View;
 import android.widget.AbsListView;
 import cn.feng.skin.manager.loader.SkinManager;
 
+/**
+ * AbsListView Attr
+ */
 public class ListSelectorAttr extends SkinAttr {
 
 	@Override

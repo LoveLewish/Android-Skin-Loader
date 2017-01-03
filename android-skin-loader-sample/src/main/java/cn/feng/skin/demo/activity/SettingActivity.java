@@ -1,7 +1,6 @@
 package cn.feng.skin.demo.activity;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -9,6 +8,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import cn.feng.skin.demo.R;
 import cn.feng.skin.manager.base.BaseActivity;
@@ -23,11 +27,7 @@ public class SettingActivity extends BaseActivity {
 	 * eg:
 	 * /mnt/sdcard/BlackFantacy.skin
 	 */
-	private static final String SKIN_NAME = "BlackFantacy.skin";
-	private static final String SKIN_DIR = Environment
-			.getExternalStorageDirectory() + File.separator + SKIN_NAME;
-	
-	
+	private String skinPath = "";
 	private TextView titleText;
 	private Button setOfficalSkinBtn;
 	private Button setNightSkinBtn;
@@ -38,8 +38,53 @@ public class SettingActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting);
-
 		initView();
+		copyToAndroid();
+	}
+	private static void copyFileUsingFileStreams(File source, File dest)
+			throws IOException {
+		InputStream input = null;
+		OutputStream output = null;
+		try {
+			input = new FileInputStream(source);
+			output = new FileOutputStream(dest);
+			byte[] buf = new byte[1024];
+			int bytesRead;
+			while ((bytesRead = input.read(buf)) > 0) {
+				output.write(buf, 0, bytesRead);
+			}
+		} finally {
+			input.close();
+			output.close();
+		}
+	}
+	private static void copyFileUsingFileStreams(InputStream source, File dest)
+			throws IOException {
+		InputStream input = null;
+		OutputStream output = null;
+		try {
+			input = source;
+			output = new FileOutputStream(dest);
+			byte[] buf = new byte[1024];
+			int bytesRead;
+			while ((bytesRead = input.read(buf)) > 0) {
+				output.write(buf, 0, bytesRead);
+			}
+		} finally {
+			input.close();
+			output.close();
+		}
+	}
+	private void copyToAndroid() {
+		File filesDir = getFilesDir();
+		skinPath = filesDir.toString() + "/blackNight.skin";
+		File file = new File(skinPath);
+		try {
+			InputStream inputStream = getAssets().open("blackNight.skin");
+			copyFileUsingFileStreams(inputStream,file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void initView() {
@@ -88,11 +133,9 @@ public class SettingActivity extends BaseActivity {
 
 	private void onSkinSetClick() {
 		if(!isOfficalSelected) return;
-		
-		File skin = new File(SKIN_DIR);
-
+		File skin = new File(skinPath);
 		if(skin == null || !skin.exists()){
-			Toast.makeText(getApplicationContext(), "请检查" + SKIN_DIR + "是否存在", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "请检查" + skinPath + "是否存在", Toast.LENGTH_SHORT).show();
 			return;
 		}
 

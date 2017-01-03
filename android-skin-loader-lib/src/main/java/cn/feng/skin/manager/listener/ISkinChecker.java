@@ -2,6 +2,9 @@ package cn.feng.skin.manager.listener;
 
 import android.content.Context;
 
+/**
+ * 检查Skin是否合法
+ */
 public interface ISkinChecker {
 	
 	/**

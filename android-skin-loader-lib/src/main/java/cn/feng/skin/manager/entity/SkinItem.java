@@ -1,12 +1,15 @@
 package cn.feng.skin.manager.entity;
 
+import android.view.View;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.feng.skin.manager.util.ListUtils;
-import android.content.res.Resources;
-import android.view.View;
 
+/**
+ * SkinView
+ */
 public class SkinItem {
 	
 	public View view;

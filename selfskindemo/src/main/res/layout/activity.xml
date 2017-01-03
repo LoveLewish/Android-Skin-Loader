@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_app_bg"
+    skin:enable="true">
+
+    <Button
+        android:id="@+id/btn_guanfang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app_bg"
+        android:onClick="CheckGF"
+        android:text="官网主题"
+        android:textSize="26sp"
+        skin:enable="true"/>
+
+    <Button
+        android:id="@+id/btn_ziji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app_bg"
+        android:onClick="CheckZJ"
+        android:text="自己的主题"
+        android:textSize="26sp"
+        skin:enable="true"/>
+</LinearLayout>

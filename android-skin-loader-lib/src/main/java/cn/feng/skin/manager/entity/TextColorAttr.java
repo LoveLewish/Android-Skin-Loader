@@ -1,10 +1,10 @@
 package cn.feng.skin.manager.entity;
 
-import cn.feng.skin.manager.loader.SkinManager;
-import cn.feng.skin.manager.util.L;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import cn.feng.skin.manager.loader.SkinManager;
+import cn.feng.skin.manager.util.L;
 
 public class TextColorAttr extends SkinAttr {
 

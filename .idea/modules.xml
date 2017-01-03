@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/android-skin-loader-lib/android-skin-loader-lib.iml" filepath="$PROJECT_DIR$/android-skin-loader-lib/android-skin-loader-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-skin-loader-sample/android-skin-loader-sample.iml" filepath="$PROJECT_DIR$/android-skin-loader-sample/android-skin-loader-sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-skin-loader-skin/android-skin-loader-skin.iml" filepath="$PROJECT_DIR$/android-skin-loader-skin/android-skin-loader-skin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/selfskindemo/selfskindemo.iml" filepath="$PROJECT_DIR$/selfskindemo/selfskindemo.iml" />
     </modules>
   </component>
 </project>

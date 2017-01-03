@@ -2,6 +2,13 @@ package cn.feng.skin.manager.entity;
 
 import android.view.View;
 
+/**
+ * 换肤属性
+ * params 	attrName->属性名
+ *			attrValueRefId->属性值引用资源的ID
+ *			attrValueRefName->属性值引用资源的名字
+ *			attrValueTypeName->属性值引用资源的类型
+ */
 public abstract class SkinAttr {
 	
 	protected static final String RES_TYPE_NAME_COLOR = "color";
